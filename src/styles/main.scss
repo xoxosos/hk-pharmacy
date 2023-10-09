@@ -4,8 +4,8 @@ body {
   transition:
     background-color 0.3s,
     color 0.3s;
-
-  @include useTheme {
+  // 样式规则，使用混合应用当前模式和主题的样式
+  @include useTheme($curMode, $curTheme) {
     background-color: getModeVar('bgColor');
     color: getModeVar('infoColor');
   }

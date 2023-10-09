@@ -1,12 +1,12 @@
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/reset.css'
+import 'normalize.css/normalize.css'
 import { createPinia } from 'pinia'
 import { createPersistedState } from 'pinia-plugin-persistedstate'
 import { createApp } from 'vue'
-import 'normalize.css/normalize.css'
 import App from './App.vue'
-import './assets/main.scss'
 import router from './router'
+import './styles/main.scss'
 const app = createApp(App)
 const pinia = createPinia()
 pinia.use(
