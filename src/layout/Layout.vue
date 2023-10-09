@@ -45,9 +45,11 @@
         Ant Design ©2018 Created by Ant UED
       </a-layout-footer>
     </a-layout>
+    <Setting />
   </a-layout>
 </template>
 <script lang="ts" setup>
+import Setting from '@/components/setting/index.vue'
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons-vue'
 import { ref } from 'vue'
 import { RouterView } from 'vue-router'

@@ -1,12 +1,17 @@
 <template>
-  <div>
-    login
-    <AboutView />
-  </div>
+  <div class="test">login</div>
 </template>
 
-<script setup lang="ts">
-import AboutView from '@/views/AboutView.vue'
-</script>
+<script setup lang="ts"></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '@/styles/theme';
+
+.test {
+  height: 20px;
+  @include useTheme {
+    // 定制
+    background-color: getColor(primary);
+  }
+}
+</style>

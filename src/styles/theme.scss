@@ -63,11 +63,14 @@ $curTheme: 'red';
 }
 
 // 混合用于应用主题样式
-@mixin useTheme($mode, $theme) {
-  $curMode: $mode !global;
-  $curTheme: $theme !global;
-  // 根据模式和主题应用样式
-  html[data-dark='#{$mode}'][data-theme='#{$theme}'] & {
-    @content;
+@mixin useTheme() {
+  @each $key1, $value1 in $modes {
+    $curMode: $key1 !global;
+    @each $key2, $value2 in $colors {
+      $curTheme: $key2 !global;
+      html[data-dark='#{$key1}'][data-theme='#{"" + $key2}'] & {
+        @content;
+      }
+    }
   }
 }
