@@ -1,4 +1,3 @@
-import Layout from '@/layout/Layout.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 //constantRoutes 静态路由 登陆，首页等。。。
 export const constantRoutes = [
@@ -14,17 +13,35 @@ export const constantRoutes = [
       title: '首页',
       icon: 'House'
     },
-    component: Layout
+    component: () => import('@/views/dashboard/DashboardView.vue')
+  },
+  {
+    path: '/retail',
+    name: 'retail',
+    meta: {
+      title: '零售管理',
+      icon: 'House'
+    },
+    component: () => import('@/views/management/retail/RetailView.vue')
+  },
+  {
+    path: '/inventory',
+    name: 'inventory',
+    meta: {
+      title: '库存管理',
+      icon: 'House'
+    },
+    component: () => import('@/views/management/inventory/InventoryView.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    meta: {
+      title: '登录'
+    },
+    component: () => import('@/views/user/login/LoginView.vue'),
+    hidden: true
   }
-  // {
-  //   path: '/login',
-  //   name: 'Login',
-  //   meta: {
-  //     title: '登录'
-  //   },
-  //   component: () => import('@/views/user/login/index.vue'),
-  //   hidden: true
-  // },
   // {
   //   path: '/:pathMatch(.*)*', // 此写法解决动态路由页面刷新的 warning 警告
   //   component: () => import('@/views/user/error-page/404.vue'),

@@ -6,28 +6,31 @@
       @collapse="onCollapse"
       @breakpoint="onBreakpoint"
     >
-      <div class="logo" />
-      <a-menu
-        v-model:selectedKeys="selectedKeys"
-        :theme="app.darkMode"
-        mode="inline"
-        @click="handleClick"
-      >
+      <div class="logo">logo</div>
+      <a-menu v-model:selectedKeys="selectedKeys" :theme="app.darkMode" mode="inline">
         <a-menu-item key="1">
-          <user-outlined />
-          <span class="nav-text">nav 1</span>
+          <RouterLink to="/dashboard">
+            <user-outlined />
+            <span class="nav-text">首页</span>
+          </RouterLink>
         </a-menu-item>
         <a-menu-item key="2">
-          <video-camera-outlined />
-          <span class="nav-text">nav 2</span>
+          <RouterLink to="/retail">
+            <video-camera-outlined />
+            <span class="nav-text">零售管理</span>
+          </RouterLink>
         </a-menu-item>
         <a-menu-item key="3">
-          <upload-outlined />
-          <span class="nav-text">nav 3</span>
+          <RouterLink to="/inventory">
+            <upload-outlined />
+            <span class="nav-text">库存管理</span>
+          </RouterLink>
         </a-menu-item>
         <a-menu-item key="4">
-          <user-outlined />
-          <span class="nav-text">nav 4</span>
+          <RouterLink to="/login">
+            <user-outlined />
+            <span class="nav-text">nav 4</span>
+          </RouterLink>
         </a-menu-item>
       </a-menu>
     </a-layout-sider>
@@ -57,12 +60,9 @@ const onCollapse = (collapsed: boolean, type: string) => {
 const onBreakpoint = (broken: boolean) => {
   console.log(broken)
 }
-const handleClick = (e) => {
-  console.log(e)
-}
 const selectedKeys = ref<string[]>(['4'])
 </script>
-<style scoped>
+<style scoped lang="scss">
 .logo {
   height: 32px;
   background: rgba(255, 255, 255, 0.2);
