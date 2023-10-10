@@ -35,7 +35,9 @@
       </a-menu>
     </a-layout-sider>
     <a-layout>
-      <a-layout-header :style="{ padding: 0 }" />
+      <a-layout-header :style="{ padding: 0 }">
+        <HeaderView />
+      </a-layout-header>
       <a-layout-content :style="{ margin: '24px 16px 0' }">
         <div :style="{ padding: '24px', minHeight: '360px' }">
           <RouterView />
@@ -54,6 +56,7 @@ import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/i
 import { ref } from 'vue'
 import { RouterView } from 'vue-router'
 import { useAppStore } from '../stores/app'
+import HeaderView from './header/HeaderView.vue'
 const app = useAppStore()
 const onCollapse = (collapsed: boolean, type: string) => {
   console.log(collapsed, type)

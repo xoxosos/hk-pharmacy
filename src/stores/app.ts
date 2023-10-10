@@ -17,11 +17,11 @@ export const useAppStore = defineStore('app', () => {
     // 主题配置
     return {
       token: {
-        colorPrimary: variables[themeName.value] || '#27ba9b',
+        colorPrimary: variables[themeName.value] || themeName.value || '#27ba9b',
         colorSuccess: '#1dc779',
         colorWarning: '#ffb302',
         colorError: '#cf4444',
-        colorInfo: variables[themeName.value] || '#27ba9b',
+        colorInfo: variables[themeName.value] || themeName.value || '#27ba9b',
         wireframe: true
       },
       algorithm: darkMode.value === 'light' ? theme.defaultAlgorithm : theme.darkAlgorithm
