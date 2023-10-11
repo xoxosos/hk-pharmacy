@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LayoutVue from './layout/Layout.vue'
+import Layout from './layout/index.vue'
 
 import { useAppStore } from '@/stores/app'
 const app = useAppStore()
@@ -9,6 +9,6 @@ app.darkModeComp
 
 <template>
   <a-config-provider :theme="app.themeConfig">
-    <LayoutVue />
+    <Layout />
   </a-config-provider>
 </template>
