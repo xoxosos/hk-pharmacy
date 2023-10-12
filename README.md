@@ -1,6 +1,6 @@
 # hk-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+使用最新的vue3.3 + vite4 + ts5 + pinia实现的零售管理系统。
 
 ## Recommended IDE Setup
 
