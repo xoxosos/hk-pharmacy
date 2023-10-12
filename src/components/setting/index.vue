@@ -24,7 +24,7 @@ import { SettingOutlined } from '@ant-design/icons-vue'
 import { h, ref } from 'vue'
 import SettingView from './SettingView.vue'
 defineOptions({
-  name: 'Setting'
+  name: 'SettingVue'
 })
 const open = ref<boolean>(false)
 

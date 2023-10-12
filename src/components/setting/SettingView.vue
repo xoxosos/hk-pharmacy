@@ -21,7 +21,7 @@ watch(
       <h2>主题设置</h2>
       <input type="color" v-model="color" @change="handleChange(color)" />
       <a-select v-model:value="app.themeName" style="width: 240px">
-        <a-select-option v-for="(color, name) in variables" :value="name">
+        <a-select-option v-for="(color, name) in variables" :value="name" :key="name">
           {{ name }}:{{ color }}</a-select-option
         >
       </a-select>

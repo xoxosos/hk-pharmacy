@@ -1,28 +1,52 @@
-<template>
-  <div>dashboard</div>
-  <div style="padding: 30px">
-    <a-row :gutter="16">
-      <a-col :span="12">
-        <StatisticCard :value-style="{ color: 'red' }">
-          <template #prefix>
-            <arrow-up-outlined />
-          </template>
-        </StatisticCard>
-      </a-col>
-      <a-col :span="12">
-        <StatisticCard>
-          <template #prefix>
-            <arrow-down-outlined />
-          </template>
-        </StatisticCard>
-      </a-col>
-    </a-row>
-  </div>
-</template>
-
 <script setup lang="ts">
 import StatisticCard from '@/components/statistic/StatisticCard.vue'
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons-vue'
+import { h } from 'vue'
 </script>
+<template>
+  <div class="flex-container">
+    <div class="flex-card">
+      <StatisticCard :value-style="{ color: 'green' }" :prefix="h(ArrowUpOutlined)" />
+    </div>
+    <div class="flex-card">
+      <StatisticCard :value-style="{ color: 'red' }" :prefix="h(ArrowDownOutlined)" />
+    </div>
+    <div class="flex-card">
+      <StatisticCard :value-style="{ color: 'green' }" :prefix="h(ArrowUpOutlined)" />
+    </div>
+    <div class="flex-card">
+      <StatisticCard :value-style="{ color: 'green' }" :prefix="h(ArrowUpOutlined)" />
+    </div>
+  </div>
+</template>
+<style lang="scss" scoped>
+$gap: 8px;
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; // 在大屏幕上居中显示
+}
+.flex-card {
+  flex: 0 0 calc(25% - 2 * #{$gap}); // 使用#{}插值
+  margin: $gap;
+  box-sizing: border-box;
+}
 
-<style lang="scss" scoped></style>
+@media (768px< width < 1024px) {
+  .flex-container {
+    justify-content: flex-start; // 在中等屏幕上靠左显示
+  }
+  .flex-card {
+    flex: 0 0 calc(50% - 2 * #{$gap}); // 在中等屏幕上每行显示2个
+  }
+}
+
+@media (width < 768px) {
+  .flex-container {
+    justify-content: flex-start; // 在小屏幕上靠左显示
+  }
+  .flex-card {
+    flex: 0 0 calc(100% - 2 * #{$gap}); // 在小屏幕上每行只显示1个
+  }
+}
+</style>

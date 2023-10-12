@@ -7,6 +7,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import './styles/main.scss'
+import './assets/base.css'
 const app = createApp(App)
 const pinia = createPinia()
 pinia.use(

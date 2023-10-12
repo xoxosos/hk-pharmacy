@@ -1,7 +1,6 @@
 <template>
   <div class="header-view">
     <!-- 全屏 -->
-
     <div class="header-tool-item">
       <a-tooltip placement="bottom">
         <template #title>
@@ -23,8 +22,8 @@
         </div>
         <template #overlay>
           <a-menu @click="onClick">
-            <a-menu-item key="1">1st menu item</a-menu-item>
-            <a-menu-item key="2">2nd menu item</a-menu-item>
+            <a-menu-item key="1">个人信息</a-menu-item>
+            <a-menu-item key="2">修改密码</a-menu-item>
             <a-menu-item key="logout">
               <span>
                 退出登录
